@@ -1,10 +1,9 @@
 class Ball {
-  constructor(x,y,speedX,speedY,id){
+  constructor(x,y,speedX,speedY){
     this.loc= createVector(x,y);
     this.vel= createVector(speedX, speedY);
     this.acc= createVector(0, -10);
     this.clr= color(random(0),random(199), random(230));
-    this.id = id;
   }
   run(){
     this.checkEdges();
@@ -30,35 +29,26 @@ class Ball {
     //if mouseClicked(){
       //rotateZ(180);
     }
+    update(){
+    this.loc.add(this.vel)
+    this.vel.limit(2)
 
-  update(){
-  this.loc.add(this.vel)
-  this.vel.limit(2)
-
-  }
-
-  render(){
-    stroke(random(200), random(0), random(255));
-    //background(0);
-    // fill(this.clr);
-    if(this.id === -1){
-      fill(255,255,255);
-      ellipse( this.loc.x, this.loc.y, 50, 50);
-    }else{
-      fill(this.clr);
-      ellipse( this.loc.x, this.loc.y, 50, 50);
     }
+    render(){
+      stroke(random(200), random(0), random(255));
+      //background(0);
+      // fill(this.clr)
+      fill(this.clr);
+      ellipse(this.loc.x, this.loc.y, 20,20);
+  }
+  isColliding(){
 
-
-   isColliding(){
-
-      if (this.loc.x> paddle.loc.x &&
-      this.loc.x < paddle.loc.x + w &&
-      this.loc.y > paddle.loc.y &&
-      this.loc.y < paddle.loc.y + h){
-        return true;}
-        else{
-          return false;
-        }
-}
+     if (this.loc.x> paddle.loc.x &&
+     this.loc.x < paddle.loc.x + w &&
+     this.loc.y > paddle.loc.y &&
+     this.loc.y < paddle.loc.y + h){
+       return true;}
+       else{
+         return false;
+       }
 }

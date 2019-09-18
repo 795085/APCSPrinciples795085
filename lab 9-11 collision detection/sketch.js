@@ -3,8 +3,8 @@
 //  This is a comment
 //  The setup function function is called once when your program begins
 
-var ship=[];
-var attr, replr;
+var ball;
+var paddle;
 
 
 function setup() {
@@ -33,15 +33,12 @@ function draw() {
 }
 
 function loadObjects(n){
-  attr = new Ball(width/3, height/3, random(-2,2), random(-2,2), -1);
-  replr= new Ball(width/3, height/3, random(-2,2), random(-2,2), -2);
-  ship = new Ship(width/10, height/10, random(-2,2), random(-2,2),0.1);
+
+  ball= new Ball(width/10, height/10, random(-2,2), random(-2,2), -2);
+  paddle = new Paddle (width/3, height/13, random(-2,2), random(-2,2),0.1);
   }
 
 function runObjects(){
-  attr.run();
-  replr.run();
-  for(var i = 0; i< ship.length; i++){
-    ship[i].run();
+  ball.run();
+  paddle.run();
   }
-}
