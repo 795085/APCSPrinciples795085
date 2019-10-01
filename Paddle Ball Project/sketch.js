@@ -48,7 +48,7 @@ function loadObjects(n){
 
 
   paddle = new Paddle (width, height, random(-20,20), random(-20,20),1);
-  ball= new Ball(width/10, height/10, random(-2,2), random(-2,2));
+  ball= new Ball(width/10, height/10, random(-2,2), random(-2,2), paddle);
 }
 
 

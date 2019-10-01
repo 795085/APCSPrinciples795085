@@ -1,13 +1,15 @@
 class Ball {
-  constructor(x,y,speedX,speedY){
+  constructor(x,y,speedX,speedY, paddle){
     this.loc= createVector(x,y);
     this.vel= createVector(speedX, speedY);
     this.acc= createVector(0, -10);
     this.clr= color(random(0),random(199), random(230));
+    this.paddle = paddle;
   }
 
   run(){
-    this.checkEdges();
+      this.checkEdges();
+      this.isColliding();
     this.update();
     this.render();
   }
@@ -46,22 +48,16 @@ class Ball {
       ellipse(this.loc.x, this.loc.y, 20,20);
   }
 
-  isColliding(){
+  isColliding() {
 
-     if (this.loc.x> paddle.loc.x &&
-     this.loc.x < paddle.loc.x + w &&
-     this.loc.y > paddle.loc.y &&
-     this.loc.y < paddle.loc.y + h){
-       return true;}
-       else{
-         return false;
-       }
-       if (this.loc.x === paddle.loc.x){
-         this.vel.x = -this.vel.x;
-       }
-       if(this.loc.y=== paddle.loc.y){
-         this.vel.y = -this.vel.y;
-       }
-     }
+      if (this.loc.x > this.paddle.loc.x &&
+          //this.loc.x < paddle.loc.x + w &&
+          this.loc.x < this.paddle.loc.x + this.paddle.w &&
+          this.loc.y > this.paddle.loc.y &&
+          //this.loc.y < paddle.loc.y + h){
+          this.loc.y < this.paddle.loc.y + this.paddle.h) {
+          this.vel.y = -this.vel.y;
+      }
+  }
 }
 //end of class
