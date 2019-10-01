@@ -20,16 +20,16 @@ checkEdges(){
 
 update(){
 
-this.vel.add(this.acc)
-this.loc.add(this.vel)
-this.acc.limit(0.5);
+  this.vel.add(this.acc)
+  this.loc.add(this.vel)
+  this.acc.limit(0.5);
 
 
 
-this.update = function(){
-var mouseLoc = createVector(mouseX, mouseY);
-this.loc = p5.Vector.lerp(this.loc, mouseLoc, 1.2);
-}
+
+    var mouseLoc = createVector(mouseX, mouseY);
+    this.loc = p5.Vector.lerp(this.loc, mouseLoc, 1.2);
+
 }
     render(){
       fill(255,255,255);

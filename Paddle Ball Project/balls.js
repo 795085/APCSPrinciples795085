@@ -4,12 +4,15 @@ class Ball {
     this.vel= createVector(speedX, speedY);
     this.acc= createVector(0, -10);
     this.clr= color(random(0),random(199), random(230));
+    this.x === 10;
+    this.y === 10;
   }
 
   run(){
     this.checkEdges();
     this.update();
     this.render();
+    this.isColliding();
   }
 
   checkEdges(){
@@ -24,7 +27,6 @@ class Ball {
     }
     if (this.loc.y < 0){
       this.vel.y= - this.vel.y;
-    }
     if (this.loc.y > height ){
       this.vel.y= -this.vel.y;
     }
@@ -36,6 +38,9 @@ class Ball {
     this.loc.add(this.vel)
     this.vel.limit(2)
 
+    //attraction
+
+
     }
 
     render(){
@@ -46,22 +51,8 @@ class Ball {
       ellipse(this.loc.x, this.loc.y, 20,20);
   }
 
-  isColliding(){
 
-     if (this.loc.x> paddle.loc.x &&
-     this.loc.x < paddle.loc.x + w &&
-     this.loc.y > paddle.loc.y &&
-     this.loc.y < paddle.loc.y + h){
-       return true;}
-       else{
-         return false;
+
        }
-       if (this.loc.x === paddle.loc.x){
-         this.vel.x = -this.vel.x;
-       }
-       if(this.loc.y=== paddle.loc.y){
-         this.vel.y = -this.vel.y;
-       }
-     }
-}
+
 //end of class
