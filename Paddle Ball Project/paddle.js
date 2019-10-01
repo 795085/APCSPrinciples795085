@@ -2,9 +2,9 @@ class Paddle {
 
 constructor(x,y,w,h){
   this.loc = createVector(x,y);
-  this.vel = createVector(w,h);
-  this.acc = createVector(0.2);
-  this.w= 10;
+//  this.vel = createVector(w,h);
+//  this.acc = createVector(0.2);
+  this.w= 100;
   this.h= 10;
 }
 
@@ -20,9 +20,9 @@ checkEdges(){
 
 update(){
 
-this.vel.add(this.acc)
+//this.vel.add(this.acc)
 this.loc.add(this.vel)
-this.acc.limit(0.5);
+//this.acc.limit(0.5);
 
 
 
@@ -33,7 +33,8 @@ this.loc = p5.Vector.lerp(this.loc, mouseLoc, 1.2);
 }
     render(){
       fill(255,255,255);
-      rect(this.loc.x * 10, this.loc.y, this.w* 10, this.h);
+//        rect(this.loc.x * 10, this.loc.y, this.w* 10, this.h);
+        rect(this.loc.x, this.loc.y, this.w, this.h);
 
     }
     }
