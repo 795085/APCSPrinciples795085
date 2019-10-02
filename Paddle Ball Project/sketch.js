@@ -154,19 +154,16 @@ function isColliding(){
 for(var i= ball.length-1; i >=0; i--){
   var one_ball = ball [i];
    if (one_ball.loc.x> paddle.loc.x &&
-   one_ball.loc.x < paddle.loc.x +  one_ball.w &&
+   one_ball.loc.x < paddle.loc.x +  paddle.w &&
     one_ball.loc.y > paddle.loc.y &&
-    one_ball.loc.y < paddle.loc.y +  one_ball.h){
-     return true;}
-     else{
-       return false;
-     }
-     if ( one_ball.loc.x = paddle.loc.x){
-        one_ball.vel.x = - one_ball.vel.x;
-     }
-     if( one_ball.loc.y= paddle.loc.y){
+    one_ball.loc.y < paddle.loc.y +  paddle.h){
+
+        //one_ball.vel.x = - one_ball.vel.x;
         one_ball.vel.y = - one_ball.vel.y;
-     }
+
+    }
+
+
 
       // if(balls[i].isColliding()){
         // balls.splice(1,1);
