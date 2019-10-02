@@ -12,7 +12,6 @@ class Ball {
     this.checkEdges();
     this.update();
     this.render();
-    this.isColliding();
   }
 
   checkEdges(){
@@ -33,6 +32,7 @@ class Ball {
     //if mouseClicked(){
       //rotateZ(180);
     }
+  }
 
     update(){
     this.loc.add(this.vel)
@@ -54,5 +54,6 @@ class Ball {
 
 
        }
+
 
 //end of class

@@ -150,28 +150,29 @@ function endGame(){
     }
     return false;
 }
-isColliding(){
-
-   if (balls.loc.x> paddle.loc.x &&
-   balls.loc.x < paddle.loc.x + balls.w &&
-   balls.loc.y > paddle.loc.y &&
-   balls.loc.y < paddle.loc.y + balls.h){
+function isColliding(){
+for(var i= ball.length-1; i >=0; i--){
+  var one_ball = ball [i];
+   if (one_ball.loc.x> paddle.loc.x &&
+   one_ball.loc.x < paddle.loc.x +  one_ball.w &&
+    one_ball.loc.y > paddle.loc.y &&
+    one_ball.loc.y < paddle.loc.y +  one_ball.h){
      return true;}
      else{
        return false;
      }
-     if (ball.loc.x === paddle.loc.x){
-       balls.vel.x = -balls.vel.x;
+     if ( one_ball.loc.x = paddle.loc.x){
+        one_ball.vel.x = - one_ball.vel.x;
      }
-     if(balls.loc.y=== paddle.loc.y){
-       balls.vel.y = -balls.vel.y;
+     if( one_ball.loc.y= paddle.loc.y){
+        one_ball.vel.y = - one_ball.vel.y;
      }
-     for(var i= balls.length-1; i >=0; i--){
-       if(balls[i].isColliding()){
-         balls.splice(1,1);
+
+      // if(balls[i].isColliding()){
+        // balls.splice(1,1);
        }
      }
 
-}
+
 
 //++++++++++++++++++++++++++end of mouseClicked
