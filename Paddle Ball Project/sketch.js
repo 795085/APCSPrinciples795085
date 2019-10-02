@@ -112,6 +112,8 @@ function playGame(){
   background(0);
   runObjects();
   isColliding();
+  health();
+
 }
 
 
@@ -165,10 +167,17 @@ for(var i= ball.length-1; i >=0; i--){
 
 
 
+
       // if(balls[i].isColliding()){
         // balls.splice(1,1);
        }
      }
+
+    function health(){
+        if (ball.loc.x > 800 && ball.loc.y > 800 && difficulty = "easy"){
+            
+        }
+    }
 
 
 
