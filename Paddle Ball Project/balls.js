@@ -6,6 +6,7 @@ class Ball {
     this.clr= color(random(0),random(199), random(230));
     this.x === 10;
     this.y === 10;
+
   }
 
   run(){

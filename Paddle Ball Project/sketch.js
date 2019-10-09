@@ -173,11 +173,6 @@ for(var i= ball.length-1; i >=0; i--){
        }
      }
 
-    function health(){
-        if (ball.loc.x > 800 && ball.loc.y > 800 && difficulty = "easy"){
-            
-        }
-    }
 
 
 
