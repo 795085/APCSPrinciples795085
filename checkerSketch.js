@@ -14,10 +14,11 @@ function setup() {
   loadSquares(64);
   //loop to render squares
   for(var i = 0; i < squares.length; i++){
+  for(var j= 0; j < squares.length; j++){
     squares[i] render();
   }
 }
-
+}
 //loading the squares
 function loadSquares(){
   squares[i]= new Squares (50, 50, random(-800,800), random(-800,800));

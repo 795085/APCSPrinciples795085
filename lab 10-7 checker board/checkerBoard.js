@@ -3,13 +3,9 @@ class Squares {
 }
 
 run(){
-  this.update();
   this.render();
 }
 
-update(){
-
-}
 
 
 render(){
