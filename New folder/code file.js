@@ -1,12 +1,10 @@
-var arr = [ 3, 6, 9, 1, 2, 7 ];
-
-//  print out the biggest number
-
-var biggestSoFar = -1000;
-for(var i= arr.length -1; i >arr.length ; i++){
-  if(i > biggestSoFar){
-    biggestSoFar === arr.length-1;
-  }
+function nestedLoopTester(){
+    var sum = 0;
+    for( var i =0; i < 3; i++){
+for( var j = 0; j <= i; j++){
+   			sum = sum + i + j;
+      	}
+     }
+    console.log(sum);
 }
-
-console.log(biggestSoFar);
+nestedLoopTester();

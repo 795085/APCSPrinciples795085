@@ -12,10 +12,10 @@ this.loc = createVector(x,y);
 //loop iteration
 }
  function loadSquares(){
-    squares [i] = new Squares(this.x.loc, this.y.loc, this.width, this.height);
+   squares = new Squares(this.width, this.height);
 
-   for (var i = 0; i< squares.length; i++){
-     for(var j = 0; i < squares.length;i++){
+   for (var i = 0; i< this.length; i++){
+     for(var j = 0; i < this.length;i++){
        if (j % 2 === 0){
        if (i % 2 === 0){
          fill(157, 0, 210);

@@ -1,5 +1,6 @@
-var arr = [];
-var n = 0;
+var arr = [10,5,7,4,3,2];
+var i,j,n;
+
 function setup() {
 
   var cnv = createCanvas(800, 800);
@@ -8,27 +9,28 @@ function setup() {
   fill(200, 30, 150);
 
   bubbleSort();
-
 }
 //swap code
 
 
 
 function bubbleSort(){
-  for(i = 0; i < n-1; i++){
-    for(j = 0; j < n-1-i;j++){
+ n = 1;
+  for( i = arr.length-1; i < 0; i--){
+    for(j = 0; j < i;j++){
       if(arr[j+1] < arr[j]){
         swap(arr[j] , arr[j+1]);
         // var temp = arr[j];
         // arr[j]= arr[j+1];
         // arr[j+1] = temp;
+        console.log(arr[i]);
+        console.log(arr[j]);
       }
     }
   }
-
 }
 
-function swap(i,j){
+function swap([arr],i,j){
   var temp = arr[i];
   arr[i]= arr[j];
   arr[j]= temp;
