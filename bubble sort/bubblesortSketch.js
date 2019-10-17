@@ -1,5 +1,5 @@
-var arr = [10,5,7,4,3,2];
-var i,j,n;
+var arr = [10,5,7,4,3,2, 17, -5, 67, 1, 4];
+var i,j,n,temp;
 
 function setup() {
 
@@ -16,22 +16,14 @@ function setup() {
 
 function bubbleSort(){
  n = 1;
-  for( i = arr.length-1; i < 0; i--){
+  for( i = arr.length-1; i > 0; i--){
     for(j = 0; j < i;j++){
       if(arr[j+1] < arr[j]){
-        swap(arr[j] , arr[j+1]);
-        // var temp = arr[j];
-        // arr[j]= arr[j+1];
-        // arr[j+1] = temp;
-        console.log(arr[i]);
-        console.log(arr[j]);
+          temp = arr[j];
+         arr[j]= arr[j+1];
+         arr[j+1] = temp;
+      console.log(arr);
       }
     }
   }
-}
-
-function swap([arr],i,j){
-  var temp = arr[i];
-  arr[i]= arr[j];
-  arr[j]= temp;
 }
