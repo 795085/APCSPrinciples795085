@@ -1,4 +1,4 @@
-var arr = [10,5,7,4,3,2, 17, -5, 67, 1, 4];
+var arr = [10,5,7,4,3,2, 17, -5, 67, 3,4];
 var i,j,n,temp;
 var pairs, swaps;
 
@@ -24,13 +24,13 @@ function selectionSort(){
     var index = i;
      for( j = i+1; j > arr.length; j++){
        if(arr [j] < arr[index]){
-         swaps= swaps +1;
-         console.log(swaps);
+    swaps= swaps +1;
          index = j;
        }
        pairs = pairs +1;
-      console.log(pairs);
      }
+     console.log(pairs);
+     console.log(swaps);
   }
   //swap code selection sort
     temp = arr[index];
@@ -49,9 +49,11 @@ function insertionSort(n){
          arr[j]= arr[j+1];
          arr[j+1] = temp;
       }
-      pairs = pairs +1;
+    pairs = pairs +1;
     }
   }
+  console.log(pairs);
+  console.log(swaps);
 }
 
 //bubble sort code begins
@@ -69,7 +71,7 @@ function bubbleSort(){
     }
   }
   console.log(pairs);
-  console.log(swaps);
+  console.log('bubble sort swaps =  ' + swaps);
 }
 
 //prints pairs and swaps
