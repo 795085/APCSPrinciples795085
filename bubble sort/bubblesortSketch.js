@@ -1,4 +1,4 @@
-var arr = [10,5,7,4,3,2, 17, -5, 67, 1, 4];
+var arr = [1,4,6,10,5,3];
 var i,j,n,temp;
 
 function setup() {
