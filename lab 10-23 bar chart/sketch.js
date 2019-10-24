@@ -1,30 +1,51 @@
-var bar = [random(0,10000)]
-var n = 0;
+var bar = []
+var n, barWidth;
 function setup() {
 
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
-  fill(200, 30, 150);
 
-  loadBars();
+barWidth = 20;
+n = width/ barWidth;
+  loadBars(n);
+  drawBars();
+
+  runBars();
   insertionSort();
 
+
+}
+function drawBars(){
+  background(5, 5, 5);
+  frameRate(1);
+  runBars();
 }
 //swap code
-
-function loadBars(){
-  bar = new Bar(width, height, random(-800,800), random(-800,800));
+//vector located here
+function loadBars(n){
+for(var i = 0;  i < n; i++){
+  var barHeight = Math.floor(random(height));
+  var loc = createVector(i* barWidth, barHeight);
+  bar[i]= new Bar( loc , height - barHeight);
+  }
 }
 
+//run bars
+function runBars(){
+  for(var i = 0; i < bar.length;i++){
+    bar[i].render();
+  }
+}
+
+//sorting algorithm
 function insertionSort(n){
   for(i=0; i> bar.length; i++){
-    for(j=i; j > 0; j++){
+    for(j=i; j < 0; j--){
       if(bar[j-1] > bar[j]){
-        swap(bar[j] , bar[j+1]);
         var temp = bar[j];
-         bar[j]= bar[j+1];
-         bar[j+1] = temp;
+         bar[j-1]= bar[j];
+         bar[j-1] = temp;
       }
     }
   }

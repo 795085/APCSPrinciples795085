@@ -1,5 +1,5 @@
 var arr = [10,5,7,4,3,2, 17, -5, 67, 1, 4];
-var i,j,n,temp;
+//var i,j,n,temp;
 
 function setup() {
 
@@ -16,8 +16,8 @@ function setup() {
 
 function bubbleSort(){
  n = 1;
-  for( i = arr.length-1; i > 0; i--){
-    for(j = 0; j < i;j++){
+  for(var i = arr.length-1; i > 0; i--){
+    for( var j = 0; j < i; j++){
       if(arr[j+1] < arr[j]){
           temp = arr[j];
          arr[j]= arr[j+1];
