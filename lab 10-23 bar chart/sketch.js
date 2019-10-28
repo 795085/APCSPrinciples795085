@@ -1,5 +1,5 @@
 var bar = []
-var n, barWidth;
+var n,barWidth;
 function setup() {
 
   var cnv = createCanvas(800, 800);
@@ -40,7 +40,7 @@ function runBars(){
 
 //sorting algorithm
 function insertionSort(n){
-  for(i=0; i> bar.length; i++){
+  for(i=0; i< bar.length; i++){
     for(j=i; j < 0; j--){
       if(bar[j-1] > bar[j]){
         var temp = bar[j];
