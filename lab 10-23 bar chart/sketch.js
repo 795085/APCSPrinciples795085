@@ -36,12 +36,13 @@ function runBars(){
   for(var i = 0; i < bar.length;i++){
     bar[i].render();
   }
+  console.log(bar[i]);
 }
 
 //sorting algorithm
 function insertionSort(n){
   for(i=0; i< bar.length; i++){
-    for(j=i; j < 0; j--){
+    for(var j=i; j > 0; j--){
       if(bar[j-1] > bar[j]){
         var temp = bar[j];
          bar[j-1]= bar[j];
@@ -49,4 +50,6 @@ function insertionSort(n){
       }
     }
   }
+ console.log(bar[i]);
+ console.log(bar[j]);
 }
