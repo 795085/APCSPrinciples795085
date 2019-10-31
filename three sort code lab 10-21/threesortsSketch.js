@@ -53,7 +53,7 @@ function insertionSort(n){
     }
   }
   console.log(pairs);
-  console.log(swaps);
+  console.log('insertion sort swaps =' + swaps);
 }
 
 //bubble sort code begins
@@ -70,7 +70,7 @@ function bubbleSort(){
       pairs = pairs +1;
     }
   }
-  console.log(pairs);
+  console.log('bubble sort pairs =' + pairs);
   console.log('bubble sort swaps =  ' + swaps);
 }
 

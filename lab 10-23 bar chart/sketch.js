@@ -19,6 +19,7 @@ for(var i = 0;  i < n; i++){
   drawBars();
 }
 
+
 //run bars
 
 function drawBars(){
@@ -30,7 +31,7 @@ function drawBars(){
     bar[i].render();
   }
 //loop insertion sorting bars
-   //for(i=0; i< bar.length; i++){
+   for(i=0; i< bar.length; i++){
     for(var j=0; j > 0; j--){
       if(bar[j-1] > bar[j]){
         var temp = bar[j];
@@ -41,6 +42,7 @@ function drawBars(){
   // }
 console.log(bar[i]);
  console.log(bar[j]);
+}
 }
 
 
