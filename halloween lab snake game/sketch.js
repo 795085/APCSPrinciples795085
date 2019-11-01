@@ -47,8 +47,8 @@ function draw() {
 function loadObjects(n){
 
 
-  snake = new snake (width, height, random(-20,20), random(-20,20),1);
-  food= new food(width/10, height/10, random(-2,2), random(-2,2));
+  snake = new Snake(width, height, random(-20,20), random(-20,20),1);
+  food= new Food(width/10, height/10, random(-2,2), random(-2,2));
 }
 
 
