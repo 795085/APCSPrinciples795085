@@ -9,14 +9,19 @@ constructor(x,y,w,h,clr,head,body){
   this.body= [i];
 }
 run(){
+
   this.update();
   this.render();
+  this.tangled();
 }
+
 
 //updating
 update(){
+  var x= this.loc.x;
+&& x< width && y > 0&& y< height){
   this.loc.add(this.vel);
-  this.vel.limit(10);
+}
 
 }
 
@@ -24,11 +29,10 @@ update(){
 render(){
   this.clr = random(132, 189, 245);
   rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
+}
 
-  for(i = 0; i < body.length; i++){
-    var segment = new segment;
-    segment = rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
-  }
+tangled(){
+
 }
 
 

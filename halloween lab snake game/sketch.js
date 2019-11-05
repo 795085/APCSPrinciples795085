@@ -18,7 +18,9 @@ scoreElem.style('color', 'white');
 
   //x= 50;
   //y= 60;
-  loadObjects();
+  loadSnake();
+  loadFood();
+  keyPressed();
 }
 
 
@@ -40,7 +42,8 @@ function draw() {
 
   //x= x +xSpeed;
 //y= y+ ySpeed;
-  runObjects();
+snake.run();
+food.run();
 
 }  //runmainBall();
 
@@ -57,6 +60,20 @@ function runObjects(){
 
 }
 
+function keyPressed(){
+  if (keyCode=== UP_ARROW){
+    snake.dir(0,-1);
+  }else if(keyCode === DOWN_ARROW){
+    snake.dir(0,1);
+  }else if(keyCode === RIGHT_ARROW){
+    snake.dir(1,0);
+  }else if(keyCode === LEFT_ARROW){
+    snake.dir(-1,0);
+  }
+
+
+
+}
 function startGame(){
   fill(0, 134, 196);
   text('snake game!',25,25);
