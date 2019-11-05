@@ -1,6 +1,8 @@
 var snake;
 var food;
-let scoreElem;
+var scoreElem;
+var w = 20;
+var gameState= 1
 
 
 
@@ -11,10 +13,10 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   //score of game
-scoreElem = createDiv('Score = 0');
-scoreElem.position(20, 20);
-scoreElem.id = 'score';
-scoreElem.style('color', 'white');
+// scoreElem = createDiv('Score = 0');
+// scoreElem.position(20, 20);
+// scoreElem.id = 'score';
+// scoreElem.style('color', 'white');
 
   //x= 50;
   //y= 60;
@@ -25,7 +27,8 @@ scoreElem.style('color', 'white');
 
 //  The draw function is called @ 30 fps
 //the changing of screens depending on state
-var gameState= 1
+
+
 function draw() {
   if(gameState === 1){
     startGame();
@@ -35,26 +38,18 @@ function draw() {
   endGame();
 }
   background(0);
-
-
-
-  //x= x +xSpeed;
-//y= y+ ySpeed;
   runObjects();
-
 }  //runmainBall();
 
 function loadObjects(n){
-
-
-  snake = new Snake(width, height, random(-20,20), random(-20,20),1);
+  snake = new Snake(width/2, height/2, random(-20,20), random(-20,20),1);
   food= new Food(width/10, height/10, random(-2,2), random(-2,2));
 }
 
 
 
 function runObjects(){
-
+   snake.run();
 }
 
 function startGame(){

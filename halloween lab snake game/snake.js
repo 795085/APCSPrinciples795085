@@ -1,12 +1,12 @@
-var i;
+
 
 class Snake{
 constructor(x,y,w,h,clr,head,body){
-  this.loc = createVector(x,y);
-  this.vel = createVector(w,h);
+  this.head = createVector(x,y);
+  this.vel = createVector(0,0);
   this.w= 50;
   this.h= 50;
-  this.body= [i];
+  this.body = [];
 }
 run(){
   this.update();
@@ -15,8 +15,9 @@ run(){
 
 //updating
 update(){
-  this.loc.add(this.vel);
-  this.vel.limit(10);
+
+  this.head.add(this.vel);
+
 
 }
 
@@ -25,10 +26,10 @@ render(){
   this.clr = random(132, 189, 245);
   rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
 
-  for(i = 0; i < body.length; i++){
-    var segment = new segment;
-    segment = rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
-  }
+  // for(var i = 0; i < body.length; i++){
+  //   var segment = this.body[i];
+  //   rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
+  // }
 }
 
 
