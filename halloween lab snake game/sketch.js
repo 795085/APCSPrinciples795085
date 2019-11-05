@@ -20,8 +20,7 @@ function setup() {
 
   //x= 50;
   //y= 60;
-  loadSnake();
-  loadFood();
+  loadObjects();
   keyPressed();
 }
 
@@ -40,9 +39,6 @@ function draw() {
   endGame();
 }
   background(0);
-<<<<<<< HEAD
-  runObjects();
-=======
 
 
 
@@ -51,19 +47,14 @@ function draw() {
 snake.run();
 food.run();
 
->>>>>>> 2ea57875d54d84603cc40663d6f9a67f31a345b1
 }  //runmainBall();
 
-function loadObjects(n){
+function loadObjects(){
   snake = new Snake(width/2, height/2, random(-20,20), random(-20,20),1);
   food= new Food(width/10, height/10, random(-2,2), random(-2,2));
 }
 
 
-
-function runObjects(){
-   snake.run();
-}
 
 function keyPressed(){
   if (keyCode=== UP_ARROW){
