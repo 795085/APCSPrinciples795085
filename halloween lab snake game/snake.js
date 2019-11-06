@@ -9,12 +9,16 @@ constructor(x,y,w,h,clr,head,body){
   this.body = [];
 }
 run(){
-
+  this.setDir();
   this.update();
   this.render();
   this.tangled();
 }
 
+setDir(x,y){
+  this.xdir = x;
+  this.ydir = y;
+}
 
 //updating
 update(){
@@ -26,6 +30,9 @@ update(){
   if(x > 0 && x< width && y > 0&& y< height){
   this.head.add(this.vel);
 }
+
+this.body[0].x += this.xdir;
+this.body[0].y += this.ydir;
 
 }
 
