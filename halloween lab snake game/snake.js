@@ -8,13 +8,18 @@ constructor(x,y,w,h,clr,head,body){
   this.h= 50;
 
 run(){
+<<<<<<< HEAD
 
   this.checkEdges();
+=======
+  this.setDir();
+>>>>>>> 427a761bcde3d1ffa69ac560960c5c303369ec17
   this.update();
   this.render();
   this.tangled();
 }
 
+<<<<<<< HEAD
 //checks the edges of snake so it wont go off screen
 checkEdges(){
   if(keyCode === UP_ARROW){
@@ -32,6 +37,12 @@ checkEdges(){
   }
 }
 
+=======
+setDir(x,y){
+  this.xdir = x;
+  this.ydir = y;
+}
+>>>>>>> 427a761bcde3d1ffa69ac560960c5c303369ec17
 
 //updating
 update(){
@@ -40,6 +51,9 @@ update(){
 
   this.head.add(this.vel);
 }
+
+this.body[0].x += this.xdir;
+this.body[0].y += this.ydir;
 
 }
 
