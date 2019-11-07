@@ -21,7 +21,7 @@ function setup() {
   //x= 50;
   //y= 60;
   loadObjects();
-  keyPressed();
+  runObjects();
 }
 
 
@@ -37,39 +37,27 @@ function draw() {
   playGame();
 }else if(gameState ===3){
   endGame();
+  text("YOU LOST!, 400, 400");
 }
   background(0);
 
+}
 
+//objects appear in game
+function runObjects(){
+  snake.run();
+  food.run();
+}
 
-  //x= x +xSpeed;
-//y= y+ ySpeed;
-snake.run();
-food.run();
-
-}  //runmainBall();
+  //x= x}  //runmainBall();
 
 function loadObjects(){
   snake = new Snake(width/2, height/2, random(-20,20), random(-20,20),1);
   food= new Food(width/10, height/10, random(-2,2), random(-2,2));
 }
 
+//starts objects
 
-
-function keyPressed(){
-  if (keyCode=== UP_ARROW){
-    snake.dir(0,-1);
-  }else if(keyCode === DOWN_ARROW){
-    snake.dir(0,1);
-  }else if(keyCode === RIGHT_ARROW){
-    snake.dir(1,0);
-  }else if(keyCode === LEFT_ARROW){
-    snake.dir(-1,0);
-  }
-
-
-
-}
 function startGame(){
   fill(0, 134, 196);
   text('snake game!',25,25);
