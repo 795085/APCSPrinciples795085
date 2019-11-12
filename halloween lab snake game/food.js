@@ -22,6 +22,7 @@ update(){
 }
 
 render(){
+//food is filled
 fill(100,2,230);
 rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
 }

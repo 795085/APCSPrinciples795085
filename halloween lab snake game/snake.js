@@ -20,15 +20,15 @@ run(){
 checkEdges(){
   if(keyCode === UP_ARROW){
     this.vel.x = 0;
-    this.vel.y = w;
+    this.vel.y = this.w;
   } else if(keyCode === DOWN_ARROW){
     this.vel.x = 0;
-    this.vel.y = h;
+    this.vel.y = this.h;
   }else if(keyCode === LEFT_ARROW){
-    this.vel.x = w;
+    this.vel.x = this.w;
     this.vel.y = 0;
   }else if(keyCode === RIGHT_ARROW){
-    this.vel.x = h;
+    this.vel.x = this.h;
     this.vel.y = 0;
   }
 }
@@ -36,15 +36,27 @@ checkEdges(){
 
 //updating
 update(){
-  this.body[0].x = this.head.x;
-  this.body[0].y = this.head.y;
-
+//defines the x and y values and helps move body
+for(var i = this.body.length-1;i>=0;i--){
+  if(i===0){
+    this.body[0].x = this.head.x;
+    this.body[0].y = this.head.y;
+  }else{
+    this.body[i].x = this.body[i-1].x;
+    this.body[i].y = this.body[i-1].y;
+  }
+}
   this.head.add(this.vel);
 
-
-  this.body[0].x += this.xdir;
-  this.body[0].y += this.ydir;
-
+for(var i= this.body.length-1; i>=0;i--){
+  if(i===0){
+    this.body[0].x += this.vel.x;
+    this.body[0].y += this.vel.y;
+  }else{
+      this.body[i].x +=this.body[i-1].x;
+      this.body[i].y += this.body[i-1].y;
+    }
+  }
 }
 
 
