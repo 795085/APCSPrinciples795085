@@ -10,6 +10,7 @@ function setup() {
 
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
+  frameRate(10);
   background(5, 5, 5);
   fill(200, 30, 150);
   //score of game
@@ -21,7 +22,7 @@ function setup() {
   //x= 50;
   //y= 60;
   loadObjects();
-  runObjects();
+
 }
 
 
@@ -31,15 +32,17 @@ function setup() {
 
 
 function draw() {
-  if(gameState === 1){
-    startGame();
-}else if(gameState === 2){
-  playGame();
-}else if(gameState ===3){
-  endGame();
-  text("YOU LOST!, 400, 400");
-}
-  background(0);
+    background(0);
+    runObjects();
+//   if(gameState === 1){
+//     startGame();
+// }else if(gameState === 2){
+//   playGame();
+// }else if(gameState ===3){
+//   endGame();
+//   text("YOU LOST!, 400, 400");
+// }
+
 
 }
 
@@ -47,13 +50,16 @@ function draw() {
 function runObjects(){
   snake.run();
   food.run();
+  if (snake.isColliding()){
+    food= new Food(Math.floor(random(0,40)), Math.floor(random(0,40)), w);
+  }
 }
 
   //x= x}  //runmainBall();
 
 function loadObjects(){
-  snake = new Snake(width/2, height/2, random(-20,20), random(-20,20),1);
-  food= new Food(width/10, height/10, random(-2,2), random(-2,2));
+  snake = new Snake(Math.floor(random(0,40)), Math.floor(random(0,40)), w);
+  food= new Food(Math.floor(random(0,40)), Math.floor(random(0,40)), w);
 }
 
 //starts objects
@@ -70,4 +76,17 @@ function startGame(){
 
 function endGame(){
 
+}
+
+function keyPressed(){
+  if(keyCode === UP_ARROW){
+    snake.vel = createVector(0, -w);
+
+  } else if(keyCode === DOWN_ARROW){
+    snake.vel = createVector(0, w);
+  }else if(keyCode === LEFT_ARROW){
+    snake.vel = createVector(-w,0);
+  }else if(keyCode === RIGHT_ARROW){
+    snake.vel = createVector(w,0);
+  }
 }
