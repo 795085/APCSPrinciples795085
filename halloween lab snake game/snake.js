@@ -27,6 +27,7 @@ update(){
   this.head.add(this.vel);
 
   var x= this.head.x;
+  var y= this.head.y;
   if(x > 0 && x< width && y > 0&& y< height){
   this.head.add(this.vel);
 }
@@ -45,11 +46,12 @@ render(){
 tangled(){
 
 
-  // for(var i = 0; i < body.length; i++){
-  //   var segment = this.body[i];
-  //   rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
-  //
+   for(var i = 0; i < body.length; i++){
+     var segment = this.body[i];
+     rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
+
 }
 
 
+}
 }

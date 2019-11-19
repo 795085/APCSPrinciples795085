@@ -1,5 +1,6 @@
 var snake;
 var food;
+var numberFood = 1;
 var scoreElem;
 var w = 20;
 var gameState= 1
@@ -55,20 +56,25 @@ function loadObjects(){
 }
 
 
-
+//key pressed function
 function keyPressed(){
   if (keyCode=== UP_ARROW){
-    snake.dir(0,-1);
+    snake.vel = createVector(0,-1);
   }else if(keyCode === DOWN_ARROW){
-    snake.dir(0,1);
+    snake.vel = createVector(0,1);
   }else if(keyCode === RIGHT_ARROW){
-    snake.dir(1,0);
+    snake.vel = createVector(1,0);
   }else if(keyCode === LEFT_ARROW){
-    snake.dir(-1,0);
+    snake.vel = createVector(-1,0);
   }
 
 
 
+}
+
+//segments add to Snake
+function addSegments(){
+  //var segments[]= new Snake(head.loc.x, head.loc.y,25,25, numberFood-1);
 }
 function startGame(){
   fill(0, 134, 196);
