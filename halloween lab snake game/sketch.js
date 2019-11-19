@@ -1,5 +1,6 @@
 var snake;
 var food;
+var numberFood = 1;
 var scoreElem;
 var w = 20;
 var gameState= 1

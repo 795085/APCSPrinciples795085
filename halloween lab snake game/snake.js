@@ -82,11 +82,12 @@ isColliding(){
 tangled(){
 
 
-  // for(var i = 0; i < body.length; i++){
-  //   var segment = this.body[i];
-  //   rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
-  //
+   for(var i = 0; i < body.length; i++){
+     var segment = this.body[i];
+     rect(this.loc.x * this.w, this.loc.y * this.h, this.w, this.h);
+
 }
 
 
+}
 }
