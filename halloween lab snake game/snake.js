@@ -68,16 +68,21 @@ render(){
 }
 
 //collides with food
-isColliding(){
-   if (this.head.x> food.loc.x &&
-   this.head.x < food.loc.x + this.w &&
-   this.head.y > food.loc.y &&
-  this.head.y < food.loc.y + this.w){
-   return true;}
-    else{
-      return false;
-   }
-}
+    isColliding(){
+        console.log("this.head.x" + this.head.x);
+        console.log("this.head.y" + this.head.y);
+        console.log("food.loc.x" + food.loc.x);
+        console.log("food.loc.y" + food.loc.y);
+        console.log("this.w" + this.w);
+        if (this.head.x> food.loc.x &&
+            this.head.x < food.loc.x + this.w &&
+            this.head.y > food.loc.y &&
+            this.head.y < food.loc.y + this.w){
+            return true;}
+        else{
+            return false;
+        }
+    }
 
 tangled(){
 

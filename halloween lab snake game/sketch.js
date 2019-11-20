@@ -11,7 +11,7 @@ function setup() {
 
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-  frameRate(10);
+  frameRate(3);
   background(5, 5, 5);
   fill(200, 30, 150);
   //score of game
@@ -49,18 +49,20 @@ function draw() {
 
 //objects appear in game
 function runObjects(){
-  snake.run();
-  food.run();
-  if (snake.isColliding()){
-    food= new Food(Math.floor(random(0,40)), Math.floor(random(0,40)), w);
-  }
+    food.run();
+    snake.run();
+    console.log("jlf1");
+    console.log("jlf" + snake.isColliding());
+    if (snake.isColliding()){
+        food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
+    }
 }
 
   //x= x}  //runmainBall();
 
 function loadObjects(){
-  snake = new Snake(Math.floor(random(0,40)), Math.floor(random(0,40)), w);
-  food= new Food(Math.floor(random(0,40)), Math.floor(random(0,40)), w);
+  snake = new Snake(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
+  food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
 }
 
 //starts objects
