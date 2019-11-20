@@ -61,8 +61,8 @@ render(){
   rect(this.head.x , this.head.y, this.w, this.w);
   //console.log("-->"  +this.head.x * this.w);
   //loop adding segment
-  // for(var i = 0; i<this.body.length;i++){
-  //   rect(this.body[i].x, this.body[i].y, this.w, this.w);
+   for(var i = 0; i<this.body.length;i++){
+   rect(this.body[i].x, this.body[i].y, this.w, this.w);
   // }
 
 }
