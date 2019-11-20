@@ -49,18 +49,20 @@ function draw() {
 
 //objects appear in game
 function runObjects(){
-  food.run();
-  snake.run();
-  if (snake.isColliding()){
-    food = new Food(Math.floor(random(0,700),Math.floor(random(0,700)),w);
-  }
+    food.run();
+    snake.run();
+    console.log("jlf1");
+    console.log("jlf" + snake.isColliding());
+    if (snake.isColliding()){
+        food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
+    }
 }
 
   //x= x}  //runmainBall();
 
 function loadObjects(){
-  food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
   snake = new Snake(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
+  food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
 }
 
 //starts objects
@@ -77,17 +79,7 @@ function startGame(){
 
 function endGame(){
 
-}
 
-function keyPressed(){
-  if(keyCode === UP_ARROW){
-    snake.vel = createVector(0, -w);
 
-  } else if(keyCode === DOWN_ARROW){
-    snake.vel = createVector(0, w);
-  }else if(keyCode === LEFT_ARROW){
-    snake.vel = createVector(-w,0);
-  }else if(keyCode === RIGHT_ARROW){
-    snake.vel = createVector(w,0);
-  }
-}
+//  The draw function is called @ 30 fps
+//the changing of screens depending on state
