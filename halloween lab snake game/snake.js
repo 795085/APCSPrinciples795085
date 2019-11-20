@@ -1,5 +1,3 @@
-
-
 class Snake{
 constructor(x,y,w){
 
@@ -29,7 +27,7 @@ update(){
 //defines the x and y values and helps move body
 
 this.head.add(this.vel);
-this.vel.limit(5);
+this.vel.limit(2);
 // for(var i = this.body.length-1;i>=0;i--){
 //   if(i===0){
 //     this.body[i].x = this.head.x;
@@ -67,24 +65,24 @@ render(){
 
 }
 
-
-
 //collides with food
-isColliding(){
-   if (this.head.x < food.loc.x &&
-  this.head.x > food.loc.x + this.w &&
-  this.head.y < food.loc.y &&
-  this.head.y > food.loc.y + this.w){
-   return true;}
-    else{
-      return false;
-   }
-}
-
+    isColliding(){
+        console.log("this.head.x" + this.head.x);
+        console.log("this.head.y" + this.head.y);
+        console.log("food.loc.x" + food.loc.x);
+        console.log("food.loc.y" + food.loc.y);
+        console.log("this.w" + this.w);
+        if (this.head.x> food.loc.x &&
+            this.head.x < food.loc.x + this.w &&
+            this.head.y > food.loc.y &&
+            this.head.y < food.loc.y + this.w){
+            return true;}
+        else{
+            return false;
+        }
+    }
 
 tangled(){
 
-}
-
-
+  }
 }
