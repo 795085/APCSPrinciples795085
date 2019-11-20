@@ -25,6 +25,6 @@ class Food{
   render(){
     //food is filled
     fill(200,2,220);
-    rect(this.loc.x*this.w , this.loc.y*this.w , this.w, this.w);
+    rect(this.loc.x , this.loc.y, this.w, this.w);
   }
 }
