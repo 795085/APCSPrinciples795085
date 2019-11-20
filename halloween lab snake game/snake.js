@@ -29,7 +29,7 @@ update(){
 //defines the x and y values and helps move body
 
 this.head.add(this.vel);
-this.vel.limit(2);
+this.vel.limit(5);
 // for(var i = this.body.length-1;i>=0;i--){
 //   if(i===0){
 //     this.body[i].x = this.head.x;
@@ -67,17 +67,20 @@ render(){
 
 }
 
+
+
 //collides with food
 isColliding(){
-   if (this.head.x> food.loc.x &&
-   this.head.x < food.loc.x + this.w &&
-   this.head.y > food.loc.y &&
-  this.head.y < food.loc.y + this.w){
+   if (this.head.x < food.loc.x &&
+  this.head.x > food.loc.x + this.w &&
+  this.head.y < food.loc.y &&
+  this.head.y > food.loc.y + this.w){
    return true;}
     else{
       return false;
    }
 }
+
 
 tangled(){
 

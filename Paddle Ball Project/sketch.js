@@ -54,10 +54,14 @@ function draw() {
 function loadObjects(n){
   //creates new objects
   paddle = new Paddle (width, height, random(-20,20), random(-20,20),1);
+<<<<<<< HEAD
 //for loop loading balls
   for(var i = 0; i < n; i++){
     ball [i]= new Ball(width/10, height/10, random(-2,2), random(-2,2));
   }
+=======
+  ball= new Ball(width/10, height/10, random(-2,2), random(-2,2), paddle);
+>>>>>>> origin/john
 }
 
 
