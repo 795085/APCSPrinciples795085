@@ -3,7 +3,7 @@ constructor(x,y,w){
 
   this.head = createVector(x,y);
   this.vel = createVector(0,0);
-  this.body = [];
+  this.segments = [];
   this.w= w;
   this.clr = color(12, 189, 12);
 }
@@ -28,13 +28,14 @@ update(){
 
 this.head.add(this.vel);
 this.vel.limit(2);
-// for(var i = this.body.length-1;i>=0;i--){
-//   if(i===0){
-//     this.body[i].x = this.head.x;
-//     this.body[i].y = this.head.y;
-//   }else{
-//     this.body[i].x = this.body[i-1].x;
-//     this.body[i].y = this.body[i-1].y;
+
+for(var i = this.segments.length-1;i>=0;i--){
+  if(i===0){
+    this.segments[i].x = this.head.x;
+    this.segments[i].y = this.head.y;
+  }else{
+    this.segments[i].x = this.segments[i-1].x;
+    this.segments[i].y = this.segments[i-1].y;
 //   }
 // }
 //   this.head.add(this.vel);
@@ -50,6 +51,10 @@ this.vel.limit(2);
 //   }
 }
 
+grow(){
+  segments.push(createVector(0,0));
+}
+
 
 
 
@@ -59,8 +64,6 @@ render(){
   rect(this.head.x , this.head.y, this.w, this.w);
   //console.log("-->"  +this.head.x * this.w);
   //loop adding segment
-   for(var i = 0; i<this.body.length;i++){
-   rect(this.body[i].x, this.body[i].y, this.w, this.w);
   // }
 
 }
@@ -76,7 +79,9 @@ render(){
             this.head.x < food.loc.x + this.w &&
             this.head.y > food.loc.y &&
             this.head.y < food.loc.y + this.w){
-            return true;}
+            return true;
+            this.segment.push(rect());
+          }
         else{
             return false;
         }

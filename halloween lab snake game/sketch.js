@@ -35,6 +35,7 @@ function setup() {
 function draw() {
     background(0);
     runObjects();
+    snake.grow();
 //   if(gameState === 1){
 //     startGame();
 // }else if(gameState === 2){
