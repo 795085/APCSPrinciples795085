@@ -27,7 +27,7 @@ update(){
 //defines the x and y values and helps move body
 
 this.head.add(this.vel);
-this.vel.limit(2);
+this.vel.limit(0);
 
 for(var i = this.segments.length-1;i>=0;i--){
   if(i===0){
@@ -35,9 +35,8 @@ for(var i = this.segments.length-1;i>=0;i--){
     this.segments[i].y = this.head.y;
   }else{
     this.segments[i].x = this.segments[i-1].x;
-    this.segments[i].y = this.segments[i-1].y;
-//   }
-// }
+    this.segments[i].y = this.segments[i-1].y; }
+}
 //   this.head.add(this.vel);
 //
 // for(var i= this.body.length-1; i>=0;i--){
@@ -48,11 +47,11 @@ for(var i = this.segments.length-1;i>=0;i--){
 //       this.body[i].x +=this.body[i-1].x;
 //       this.body[i].y += this.body[i-1].y;
 //     }
-//   }
 }
 
+
 grow(){
-  segments.push(createVector(0,0));
+  this.segments.push(createVector(0,0));
 }
 
 
@@ -64,6 +63,9 @@ render(){
   rect(this.head.x , this.head.y, this.w, this.w);
   //console.log("-->"  +this.head.x * this.w);
   //loop adding segment
+  for(var i=0; i<this.segments.length;i++){
+    rect(this.segments[i].x, this.segments[i].y, this.w, this.w);
+  }
   // }
 
 }
@@ -80,7 +82,7 @@ render(){
             this.head.y > food.loc.y &&
             this.head.y < food.loc.y + this.w){
             return true;
-            this.segment.push(rect());
+            this.segments.push(rect());
           }
         else{
             return false;
