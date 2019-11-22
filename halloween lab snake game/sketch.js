@@ -4,12 +4,14 @@ var numberFood = 1;
 var scoreElem;
 var w = 20;
 var gameState= 1;
-var btnPlay;
+var button;
+//above are the global variables
 
 
 
 function setup() {
 
+//canvas is created here
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   frameRate(3);
@@ -49,10 +51,12 @@ function draw() {
 
 }
 
+//button made press play to begin
 function makeButton(){
-  btnPlay= new Button(100,200,100,100, "play", fill(random(234,0,150)));
+  button = new Button(100,25,100,25, "play", fill(random(234,0,150)));
 }
 
+//loads the snake in the food by making new objects
 function loadObjects(){
   snake = new Snake(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
   food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
@@ -60,19 +64,20 @@ function loadObjects(){
 
 //start of the game state
 function startGame(){
+  //creates my start game screen
   background(0,233, 233);
   fill(0, 134, 196);
   textAlign('CENTER');
   text('snake game!',300,300);
   fill(120,0, 245);
-  textSize(64);
+  textSize(400);
   fill(60,230,45);
   rect(width/5, height, random(-8,8), random(-8,8));
   //button running
-  btnPlay.run();
+  button.run();
 }
 
-//objects appear in game
+//objects appear in the play game state
 function playGame(){
     food.run();
     snake.run();
@@ -90,6 +95,8 @@ function endGame(){
 }
 
 function keyPressed(){
+
+//makes the arrow keys work in order to move the snake
   if(keyCode === UP_ARROW){
     snake.vel = createVector(0, -w);
 
@@ -102,10 +109,11 @@ function keyPressed(){
   }
 }
 
+//when the mouse clicked the button the game starts
 function mouseClicked(){
-  if (mouseX > btnPlay.loc.x && mouseX < btnPlay.loc.x + btnPlay.w && mouseY > btnPlay.loc.y && mouseY < btnPlay.loc.y + btnPlay.h && btnPlay.msg === "play"){
+  if (mouseX > button.loc.x && mouseX < button.loc.x + button.w && mouseY > button.loc.y && mouseY < button.loc.y + button.h && button.msg === "play"){
     gameState = 2;
-    console.log("mouse clicked btnPlay");
+    console.log("mouse clicked button");
     return true;
   }
   return false;

@@ -1,8 +1,9 @@
 class Snake{
 constructor(x,y,w){
-
+//creates the vector for the head
   this.head = createVector(x,y);
   this.vel = createVector(0,0);
+  //segments are defined as an array, many of them can be present in the game
   this.segments = [];
   this.w= w;
   this.clr = color(12, 189, 12);
@@ -29,6 +30,7 @@ update(){
 this.head.add(this.vel);
 this.vel.limit(0);
 
+//algorithm helping the segments to appear when touching food
 for(var i = this.segments.length-1;i>=0;i--){
   if(i===0){
     this.segments[i].x = this.head.x;
@@ -82,6 +84,7 @@ render(){
             this.head.y > food.loc.y &&
             this.head.y < food.loc.y + this.w){
             return true;
+            //if true the collision will push or make a new segment
             this.segments.push(rect());
           }
         else{

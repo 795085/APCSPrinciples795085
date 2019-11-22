@@ -1,3 +1,4 @@
+//button class declared
 class Button{
   constructor(x,y, w, h, str,clr){
     this.loc = createVector(x,y);
@@ -8,7 +9,7 @@ class Button{
 
   }
 
-
+//render function defined for the button
   run(){
     this.render();
   }
@@ -22,7 +23,7 @@ class Button{
     fill(134, 0, 210);
     rect(this.loc.x, this.loc.y, this.w, this.h);
 
-    //easy
+    //fills the button and makes its shape
     textSize(24);
     textAlign('CENTER');
     fill(0);

@@ -13,6 +13,7 @@ class Food{
     this.render();
   }
 
+//detects collision in the food code
   update(){
     if(snake.head.x === this.loc.x && snake.head.y === this.loc.y){
       console.log("collsion detected");
