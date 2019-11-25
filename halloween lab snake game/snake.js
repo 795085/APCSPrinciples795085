@@ -27,9 +27,6 @@ checkEdges(){
 update(){
 //defines the x and y values and helps move body
 
-this.head.add(this.vel);
-this.vel.limit(0);
-
 //algorithm helping the segments to appear when touching food
 for(var i = this.segments.length-1;i>=0;i--){
   if(i===0){
@@ -39,6 +36,8 @@ for(var i = this.segments.length-1;i>=0;i--){
     this.segments[i].x = this.segments[i-1].x;
     this.segments[i].y = this.segments[i-1].y; }
 }
+
+this.head.add(this.vel);
 //   this.head.add(this.vel);
 //
 // for(var i= this.body.length-1; i>=0;i--){
@@ -62,11 +61,11 @@ grow(){
 //renders shapes
 render(){
   fill(this.clr);
-  rect(this.head.x , this.head.y, this.w, this.w);
+  rect(this.head.x * this.w , this.head.y * this.w, this.w, this.w);
   //console.log("-->"  +this.head.x * this.w);
   //loop adding segment
   for(var i=0; i<this.segments.length;i++){
-    rect(this.segments[i].x, this.segments[i].y, this.w, this.w);
+    rect(this.segments[i].x * this.w, this.segments[i].y * this.w, this.w, this.w);
   }
   // }
 
@@ -74,18 +73,12 @@ render(){
 
 //collides with food
     isColliding(){
-        console.log("this.head.x" + this.head.x);
-        console.log("this.head.y" + this.head.y);
-        console.log("food.loc.x" + food.loc.x);
-        console.log("food.loc.y" + food.loc.y);
-        console.log("this.w" + this.w);
-        if (this.head.x> food.loc.x &&
-            this.head.x < food.loc.x + this.w &&
-            this.head.y > food.loc.y &&
-            this.head.y < food.loc.y + this.w){
-            return true;
+        if (this.head.x === food.loc.x &&
+            this.head.y === food.loc.y){
+
             //if true the collision will push or make a new segment
-            this.segments.push(rect());
+
+            return true;
           }
         else{
             return false;

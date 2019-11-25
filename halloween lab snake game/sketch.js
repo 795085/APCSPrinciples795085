@@ -38,7 +38,6 @@ function setup() {
 
 function draw() {
     background(0);
-    snake.grow();
     if(gameState === 1){
       startGame();
     }else if(gameState === 2){
@@ -58,8 +57,8 @@ function makeButton(){
 
 //loads the snake in the food by making new objects
 function loadObjects(){
-  snake = new Snake(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
-  food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
+  snake = new Snake(Math.floor(random(0,700/w)), Math.floor(random(0,700/w)), w);
+  food= new Food(Math.floor(random(0,700/w)), Math.floor(random(0,700/w)), w);
 }
 
 //start of the game state
@@ -84,7 +83,9 @@ function playGame(){
     console.log("jlf1");
     console.log("jlf" + snake.isColliding());
     if (snake.isColliding()){
-        food= new Food(Math.floor(random(0,700)), Math.floor(random(0,700)), w);
+      //grow function called
+        snake.grow();
+        food= new Food(Math.floor(random(0,700/w)), Math.floor(random(0,700/w)), w);
     }
 }
 
@@ -98,14 +99,14 @@ function keyPressed(){
 
 //makes the arrow keys work in order to move the snake
   if(keyCode === UP_ARROW){
-    snake.vel = createVector(0, -w);
+    snake.vel = createVector(0, -1);
 
   } else if(keyCode === DOWN_ARROW){
-    snake.vel = createVector(0, w);
+    snake.vel = createVector(0, 1);
   }else if(keyCode === LEFT_ARROW){
-    snake.vel = createVector(-w,0);
+    snake.vel = createVector(-1,0);
   }else if(keyCode === RIGHT_ARROW){
-    snake.vel = createVector(w,0);
+    snake.vel = createVector(1,0);
   }
 }
 
@@ -114,6 +115,16 @@ function mouseClicked(){
   if (mouseX > button.loc.x && mouseX < button.loc.x + button.w && mouseY > button.loc.y && mouseY < button.loc.y + button.h && button.msg === "play"){
     gameState = 2;
     console.log("mouse clicked button");
+    return true;
+  }
+  return false;
+}
+
+//ends the game if snake hits wall
+function hitsWall(){
+  if(snake.head.loc.x || snake.head.loc.y === 800){
+    gameState = 3;
+    console.log("snake hits wall");
     return true;
   }
   return false;
