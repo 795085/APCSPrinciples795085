@@ -44,7 +44,6 @@ function draw() {
       playGame();
     }else if(gameState ===3){
       endGame();
-      text("YOU LOST!, 400, 400");
     }
 
 
@@ -92,6 +91,19 @@ function playGame(){
 
 
 function endGame(){
+   if (hitsWall()){
+     console.log("end!");
+     background(50, 237, 132);
+     fill(45,0, 231);
+     textAlign('CENTER');
+     text('game over!', 300,300);
+     textSize(400);
+     //fills to refresh the game
+     fill(123, 10, 234);
+     textAlign('CENTER');
+     text('refresh to restart', 320, 300);
+     textSize(400);
+   }
 
 }
 
@@ -121,9 +133,10 @@ function mouseClicked(){
 }
 
 //ends the game if snake hits wall
+//if snake hits wall
 function hitsWall(){
-  if(snake.head.loc.x || snake.head.loc.y === 800){
-    gameState = 3;
+  if(snake.head.x || snake.head.y === 800){
+    gameState= 3;
     console.log("snake hits wall");
     return true;
   }

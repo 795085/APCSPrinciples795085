@@ -13,7 +13,6 @@ run(){
   this.checkEdges();
   this.update();
   this.render();
-  this.tangled();
 }
 
 
@@ -84,8 +83,4 @@ render(){
             return false;
         }
     }
-
-tangled(){
-
-  }
 }
